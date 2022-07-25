@@ -3,14 +3,13 @@ package org.example.BonusService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
-import org.testng.annotations.Test;
 
 public class BonusServiceTests {
 
     @ParameterizedTest
-    @CsvFileSource (files = "src/test/resources/BonusServiceData.csv")
+    @CsvFileSource(files = "src/test/resources/BonusServiceData.csv")
 
-    public void doEveryTypeAndEveryLimit (int expected, long amount, boolean registered){
+    public void doEveryTypeAndEveryLimit(int expected, long amount, boolean registered) {
         BonusService service = new BonusService();
 
         long actual = service.calculate(amount, registered);
